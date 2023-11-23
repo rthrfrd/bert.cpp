@@ -188,7 +188,7 @@ if (MSVC)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 endif()
 
-if (NOT TARGET ggml)
+if ((EXISTS ggml/CMakeLists.txt) AND (NOT TARGET ggml))
     add_subdirectory(ggml)
 endif()
 
