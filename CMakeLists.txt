@@ -188,7 +188,9 @@ if (MSVC)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 endif()
 
-add_subdirectory(ggml)
+if (NOT TARGET ggml)
+    add_subdirectory(ggml)
+endif()
 
 add_library(bert
             bert.cpp
